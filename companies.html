@@ -13,6 +13,7 @@
 .cbv2{background:linear-gradient(160deg,#0e1a05,#3a6a1a 50%,#8BC858)}
 .cbv3{background:linear-gradient(160deg,#0e0a1a,#3a2070 50%,#A870C8)}
 .cbv4{background:linear-gradient(160deg,#1a0a12,#6a1a3a 50%,#C87090)}
+.cbv-nauvab{background:linear-gradient(160deg,#0a0a14,#1a1a3a 50%,#4040a0)}
 .cb-tex{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(255,255,255,.02) 3px,rgba(255,255,255,.02) 6px)}
 .cb-num{position:absolute;top:28px;left:28px;font-family:'Playfair Display',serif;font-size:80px;font-weight:700;color:rgba(255,255,255,.08);line-height:1}
 .cb-badge{position:absolute;bottom:28px;right:28px;background:rgba(0,0,0,.5);border:1px solid rgba(200,169,110,.3);backdrop-filter:blur(8px);padding:14px 18px}
@@ -30,13 +31,28 @@
 .cb-spec .s-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .cb-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .cb-tag{padding:6px 14px;background:var(--tan-light);color:var(--brown);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
-.overview-grid{padding:80px 60px;background:var(--espresso);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.og-item{padding:50px 30px;border-right:1px solid rgba(200,169,110,.15);text-align:center;transition:background .3s;cursor:pointer}
+
+/* CATALOG BUTTON */
+.catalog-btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:14px 28px;background:var(--espresso);color:var(--tan-light);font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--espresso);transition:all .3s}
+.catalog-btn:hover{background:transparent;color:var(--espresso)}
+.catalog-btn.external{background:transparent;color:var(--espresso);border-color:var(--espresso)}
+.catalog-btn.external:hover{background:var(--espresso);color:var(--tan-light)}
+.catalog-btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+/* HOVER EFFECT ON VISUAL */
+.cb-visual{cursor:pointer;transition:opacity .3s}
+.cb-visual:hover{opacity:.9}
+.cb-visual a{display:block;position:absolute;inset:0;z-index:5}
+
+.overview-grid{padding:80px 60px;background:var(--espresso);display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.og-item{padding:50px 20px;border-right:1px solid rgba(200,169,110,.15);text-align:center;transition:background .3s;cursor:pointer;text-decoration:none;display:block}
 .og-item:last-child{border-right:none}
 .og-item:hover{background:rgba(200,169,110,.06)}
 .og-num{font-family:'Playfair Display',serif;font-size:12px;font-weight:400;color:var(--gold);letter-spacing:.3em;margin-bottom:14px}
-.og-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3}
-.og-desc{font-size:12px;color:rgba(232,217,188,.55);line-height:1.6}
+.og-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3}
+.og-desc{font-size:11px;color:rgba(232,217,188,.55);line-height:1.6}
+.og-arrow{font-size:11px;color:var(--gold);margin-top:12px;opacity:0;transition:opacity .3s}
+.og-item:hover .og-arrow{opacity:1}
 </style>
 </head>
 <body>
@@ -58,28 +74,51 @@
 <div class="page-hero">
   <div class="page-hero-inner fade-up">
     <div class="ph-eyebrow"><div class="line"></div><span>The Group</span></div>
-    <h1>Four Companies,<br>One <em>Vision</em></h1>
+    <h1>Five Companies,<br>One <em>Vision</em></h1>
     <p>Each enterprise within the Explicit Leather Group specialises in a unique domain — together forming India's most integrated premium leather conglomerate.</p>
     <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Our Companies</span></div>
   </div>
 </div>
 
+<!-- QUICK NAV -->
 <div class="overview-grid">
-  <div class="og-item fade-up"><div class="og-num">01</div><div class="og-name">Explicit Leathers</div><div class="og-desc">Garments &amp; accessories — the flagship enterprise</div></div>
-  <div class="og-item fade-up"><div class="og-num">02</div><div class="og-name">Exquisite Enterprises</div><div class="og-desc">Luxury goods for international markets</div></div>
-  <div class="og-item fade-up"><div class="og-num">03</div><div class="og-name">Gee &amp; Gee Industries</div><div class="og-desc">Tannery operations &amp; finished leather</div></div>
-  <div class="og-item fade-up"><div class="og-num">04</div><div class="og-name">Scorpius Enterprises</div><div class="og-desc">Innovative leather manufacturing</div></div>
+  <a class="og-item fade-up" href="company-explicit-leathers.html">
+    <div class="og-num">01</div><div class="og-name">Explicit Leathers</div>
+    <div class="og-desc">Garments &amp; accessories — the flagship enterprise</div>
+    <div class="og-arrow">View Catalog →</div>
+  </a>
+  <a class="og-item fade-up" href="company-exquisite.html">
+    <div class="og-num">02</div><div class="og-name">Exquisite Enterprises</div>
+    <div class="og-desc">Luxury goods for international markets</div>
+    <div class="og-arrow">View Catalog →</div>
+  </a>
+  <a class="og-item fade-up" href="company-gee-gee.html">
+    <div class="og-num">03</div><div class="og-name">Gee &amp; Gee Industries</div>
+    <div class="og-desc">Tannery operations &amp; finished leather</div>
+    <div class="og-arrow">View Catalog →</div>
+  </a>
+  <a class="og-item fade-up" href="company-scorpius.html">
+    <div class="og-num">04</div><div class="og-name">Scorpius Enterprises</div>
+    <div class="og-desc">Innovative leather manufacturing</div>
+    <div class="og-arrow">View Catalog →</div>
+  </a>
+  <a class="og-item fade-up" href="https://nauvab.com/" target="_blank">
+    <div class="og-num">05</div><div class="og-name">Nauvab</div>
+    <div class="og-desc">Premium fashion brand</div>
+    <div class="og-arrow">Visit Website ↗</div>
+  </a>
 </div>
 
 <!-- COMPANY 1 -->
 <section class="company-block">
-  <div class="cb-visual fade-up">
-    <div class="cbv1"></div><div class="cb-tex"></div>
+  <div class="cb-visual fade-up" style="position:relative">
+    <a href="company-explicit-leathers.html" title="View Explicit Leathers Catalog"></a>
+    <div class="cbv1" style="position:absolute;inset:0"></div><div class="cb-tex"></div>
     <div class="cb-num">01</div>
     <div class="cb-badge"><div class="bl">Production</div><div class="bv">180K/yr</div></div>
   </div>
   <div class="cb-text fade-up">
-    <div class="company-num">01 / 04</div>
+    <div class="company-num">01 / 05</div>
     <div class="company-name">Explicit <em>Leathers</em></div>
     <div class="company-sub">The flagship enterprise of the group</div>
     <div class="cb-divider"></div>
@@ -91,18 +130,22 @@
       <div class="cb-spec"><div class="s-val">Global</div><div class="s-lbl">Export Markets</div></div>
     </div>
     <div class="cb-tags"><span class="cb-tag">Garments</span><span class="cb-tag">Accessories</span><span class="cb-tag">Export House</span><span class="cb-tag">Washed Leather</span></div>
+    <div class="catalog-btn-row">
+      <a href="company-explicit-leathers.html" class="catalog-btn">View Full Catalog →</a>
+    </div>
   </div>
 </section>
 
 <!-- COMPANY 2 -->
 <section class="company-block reverse">
-  <div class="cb-visual fade-up">
-    <div class="cbv2"></div><div class="cb-tex"></div>
+  <div class="cb-visual fade-up" style="position:relative">
+    <a href="company-exquisite.html" title="View Exquisite Enterprises Catalog"></a>
+    <div class="cbv2" style="position:absolute;inset:0"></div><div class="cb-tex"></div>
     <div class="cb-num">02</div>
     <div class="cb-badge"><div class="bl">Segment</div><div class="bv">Luxury Goods</div></div>
   </div>
   <div class="cb-text fade-up">
-    <div class="company-num">02 / 04</div>
+    <div class="company-num">02 / 05</div>
     <div class="company-name">Exquisite <em>Enterprises</em></div>
     <div class="company-sub">High-end leather goods for global luxury markets</div>
     <div class="cb-divider"></div>
@@ -114,18 +157,22 @@
       <div class="cb-spec"><div class="s-val">EU+</div><div class="s-lbl">Export Markets</div></div>
     </div>
     <div class="cb-tags"><span class="cb-tag">Handbags</span><span class="cb-tag">Accessories</span><span class="cb-tag">Luxury Goods</span><span class="cb-tag">Custom Orders</span></div>
+    <div class="catalog-btn-row">
+      <a href="company-exquisite.html" class="catalog-btn">View Full Catalog →</a>
+    </div>
   </div>
 </section>
 
 <!-- COMPANY 3 -->
 <section class="company-block">
-  <div class="cb-visual fade-up">
-    <div class="cbv3"></div><div class="cb-tex"></div>
+  <div class="cb-visual fade-up" style="position:relative">
+    <a href="company-gee-gee.html" title="View Gee & Gee Catalog"></a>
+    <div class="cbv3" style="position:absolute;inset:0"></div><div class="cb-tex"></div>
     <div class="cb-num">03</div>
     <div class="cb-badge"><div class="bl">Capacity</div><div class="bv">84L Sq Ft</div></div>
   </div>
   <div class="cb-text fade-up">
-    <div class="company-num">03 / 04</div>
+    <div class="company-num">03 / 05</div>
     <div class="company-name">Gee &amp; Gee <em>Industries</em></div>
     <div class="company-sub">Tannery operations &amp; finished leather production</div>
     <div class="cb-divider"></div>
@@ -137,18 +184,22 @@
       <div class="cb-spec"><div class="s-val">B2B</div><div class="s-lbl">Supply Focus</div></div>
     </div>
     <div class="cb-tags"><span class="cb-tag">Tannery</span><span class="cb-tag">Finished Leather</span><span class="cb-tag">B2B Supply</span><span class="cb-tag">High Volume</span></div>
+    <div class="catalog-btn-row">
+      <a href="company-gee-gee.html" class="catalog-btn">View Full Catalog →</a>
+    </div>
   </div>
 </section>
 
 <!-- COMPANY 4 -->
 <section class="company-block reverse">
-  <div class="cb-visual fade-up">
-    <div class="cbv4"></div><div class="cb-tex"></div>
+  <div class="cb-visual fade-up" style="position:relative">
+    <a href="company-scorpius.html" title="View Scorpius Enterprises Catalog"></a>
+    <div class="cbv4" style="position:absolute;inset:0"></div><div class="cb-tex"></div>
     <div class="cb-num">04</div>
     <div class="cb-badge"><div class="bl">Specialty</div><div class="bv">Innovation</div></div>
   </div>
   <div class="cb-text fade-up">
-    <div class="company-num">04 / 04</div>
+    <div class="company-num">04 / 05</div>
     <div class="company-name">Scorpius <em>Enterprises</em></div>
     <div class="company-sub">Innovative leather manufacturing &amp; finishing</div>
     <div class="cb-divider"></div>
@@ -160,11 +211,45 @@
       <div class="cb-spec"><div class="s-val">Global</div><div class="s-lbl">Innovation Reach</div></div>
     </div>
     <div class="cb-tags"><span class="cb-tag">Innovation</span><span class="cb-tag">Specialty Finishes</span><span class="cb-tag">R&amp;D</span><span class="cb-tag">Manufacturing</span></div>
+    <div class="catalog-btn-row">
+      <a href="company-scorpius.html" class="catalog-btn">View Full Catalog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY 5 — NAUVAB (External Link) -->
+<section class="company-block">
+  <div class="cb-visual fade-up" style="position:relative">
+    <a href="https://nauvab.com/" target="_blank" title="Visit Nauvab Website"></a>
+    <div class="cbv-nauvab" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+      <div style="font-family:'Playfair Display',serif;font-size:72px;font-weight:700;color:rgba(255,255,255,.15);letter-spacing:.1em">NAUVAB</div>
+    </div>
+    <div class="cb-tex"></div>
+    <div class="cb-num">05</div>
+    <div class="cb-badge"><div class="bl">Brand</div><div class="bv">Fashion</div></div>
+    <div style="position:absolute;top:20px;right:20px;background:var(--gold);color:var(--espresso);padding:6px 12px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;z-index:6">↗ External</div>
+  </div>
+  <div class="cb-text fade-up">
+    <div class="company-num">05 / 05</div>
+    <div class="company-name">Nauvab</div>
+    <div class="company-sub">Premium fashion brand — nauvab.com</div>
+    <div class="cb-divider"></div>
+    <p class="cb-body">Nauvab is a <strong>premium fashion brand</strong> associated with the Explicit Leather Group, bringing together the finest leather craftsmanship and contemporary fashion design for discerning customers worldwide.</p>
+    <p class="cb-body">Visit the Nauvab website to explore their <strong>latest collections, products, and brand story</strong> directly at nauvab.com.</p>
+    <div class="cb-specs">
+      <div class="cb-spec"><div class="s-val">Fashion</div><div class="s-lbl">Brand Focus</div></div>
+      <div class="cb-spec"><div class="s-val">Premium</div><div class="s-lbl">Positioning</div></div>
+      <div class="cb-spec"><div class="s-val">Global</div><div class="s-lbl">Reach</div></div>
+    </div>
+    <div class="cb-tags"><span class="cb-tag">Fashion Brand</span><span class="cb-tag">Premium Leather</span><span class="cb-tag">Contemporary</span><span class="cb-tag">nauvab.com</span></div>
+    <div class="catalog-btn-row">
+      <a href="https://nauvab.com/" target="_blank" class="catalog-btn external">Visit Nauvab Website ↗</a>
+    </div>
   </div>
 </section>
 
 <section class="stats-banner">
-  <div class="stat-item fade-up"><div class="stat-num">4</div><span class="stat-unit">Enterprises</span><div class="stat-label">Group Companies</div></div>
+  <div class="stat-item fade-up"><div class="stat-num">5</div><span class="stat-unit">Enterprises</span><div class="stat-label">Group Companies</div></div>
   <div class="stat-item fade-up"><div class="stat-num">2.1M</div><span class="stat-unit">Sq Ft / Year</span><div class="stat-label">Combined Production</div></div>
   <div class="stat-item fade-up"><div class="stat-num">35+</div><span class="stat-unit">Years</span><div class="stat-label">Industry Presence</div></div>
   <div class="stat-item fade-up"><div class="stat-num">Global</div><span class="stat-unit">Markets</span><div class="stat-label">Export Destinations</div></div>
@@ -174,7 +259,13 @@
   <div class="footer-grid">
     <div><div class="footer-brand-name">Explicit Leather Group</div><div class="footer-brand-sub">Est. 1990 · Faridabad, India</div><p class="footer-desc">India's premier leather manufacturing group — pioneers of garment-washed and specialty-dyed leather for global markets.</p><div class="footer-social"><a class="social-btn" href="#">in</a><a class="social-btn" href="#">IG</a><a class="social-btn" href="#">fb</a></div></div>
     <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Leather Products</a></li><li><a href="finished-leather.html">Finished Leather</a></li><li><a href="corporate-gifting.html">Corporate Gifting</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-    <div><div class="footer-col-title">Group Companies</div><ul class="footer-links"><li><a href="companies.html">Explicit Leathers</a></li><li><a href="companies.html">Exquisite Enterprises</a></li><li><a href="companies.html">Gee &amp; Gee Industries</a></li><li><a href="companies.html">Scorpius Enterprises</a></li></ul></div>
+    <div><div class="footer-col-title">Group Companies</div><ul class="footer-links">
+      <li><a href="company-explicit-leathers.html">Explicit Leathers</a></li>
+      <li><a href="company-exquisite.html">Exquisite Enterprises</a></li>
+      <li><a href="company-gee-gee.html">Gee &amp; Gee Industries</a></li>
+      <li><a href="company-scorpius.html">Scorpius Enterprises</a></li>
+      <li><a href="https://nauvab.com/" target="_blank">Nauvab ↗</a></li>
+    </ul></div>
   </div>
   <div class="footer-bottom"><span>© 2025 Explicit Leather Group. All rights reserved.</span><span>Faridabad, Haryana, India</span></div>
 </footer>

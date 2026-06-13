@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Scorpius Enterprises — Explicit Leather Group</title>
+<link rel="stylesheet" href="global.css">
+<style>
+.photo-hero-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:320px 220px;gap:4px;margin-top:60px}
+.ph-item{position:relative;overflow:hidden}
+.ph-item:first-child{grid-row:span 2}
+.ph-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.ph-item:hover img{transform:scale(1.04)}
+.ph-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(200,169,110,.2);transition:border-color .3s;cursor:pointer}
+.ph-placeholder:hover{border-color:rgba(200,169,110,.5)}
+.ph-icon{font-size:26px;opacity:.38;margin-bottom:10px}
+.ph-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);opacity:.65}
+.ph-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:rgba(232,217,188,.35);margin-top:6px}
+.products-catalog{padding:100px 60px;background:var(--cream)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.pcard{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:box-shadow .4s,transform .3s}
+.pcard:hover{box-shadow:0 20px 50px rgba(42,26,14,.12);transform:translateY(-4px)}
+.pphoto{height:260px;position:relative;overflow:hidden}
+.pphoto img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.pcard:hover .pphoto img{transform:scale(1.05)}
+.pph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(200,169,110,.15)}
+.pph:hover{border-color:rgba(200,169,110,.4)}
+.pph-i{font-size:24px;opacity:.3;margin-bottom:8px}
+.pph-l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);opacity:.55}
+.pinfo{padding:24px}
+.pcat{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan-dark);font-weight:500;margin-bottom:6px}
+.pname{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--espresso);margin-bottom:8px}
+.pdesc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.plink{display:inline-flex;align-items:center;gap:8px;color:var(--tan-dark);font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:gap .3s}
+.plink:hover{gap:14px}
+.codetail{padding:100px 60px;background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.dvis{position:relative;height:500px;overflow:hidden}
+.dvis img{width:100%;height:100%;object-fit:cover;display:block}
+.dph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed rgba(200,169,110,.18);cursor:pointer}
+.dph:hover{border-color:var(--gold)}
+.dph-i{font-size:42px;opacity:.26;margin-bottom:14px}
+.dph-l{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan);opacity:.6}
+.dph-s{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:rgba(232,217,188,.32);margin-top:6px}
+.dbadge{position:absolute;bottom:24px;right:24px;background:var(--espresso);color:var(--tan-light);padding:16px;text-align:center;z-index:2}
+.dbadge .n{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1}
+.dbadge .l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);margin-top:4px}
+.dbody{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:18px;font-weight:300}
+.dbody strong{color:var(--espresso);font-weight:500}
+.srow{display:flex;margin:28px 0;border:1px solid var(--border)}
+.scell{flex:1;padding:20px;border-right:1px solid var(--border);text-align:center}
+.scell:last-child{border-right:none}
+.sv{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--espresso)}
+.sl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.dtags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.dtag{padding:6px 14px;background:var(--tan-light);color:var(--brown);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.inqsec{padding:100px 60px;background:var(--ivory);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.iform{background:var(--white);border:1px solid var(--border);padding:40px}
+.iform input,.iform textarea{width:100%;padding:15px 18px;border:1px solid var(--border);background:var(--ivory);font-family:'Jost',sans-serif;font-size:13px;outline:none;transition:.3s;margin-bottom:14px;display:block;box-sizing:border-box}
+.iform input:focus,.iform textarea:focus{border-color:var(--gold)}
+.iform textarea{min-height:130px;resize:none}
+.crow{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--border)}
+.crow:last-child{border-bottom:none}
+.cico{width:40px;height:40px;background:var(--espresso);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:15px;flex-shrink:0}
+.clbl{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--tan-dark);display:block;margin-bottom:3px}
+.cval{font-size:14px;color:var(--espresso)}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div>
+<div class="topbar">
+  <div>📍 Plot No. 8, 14/3, Mathura Road, Faridabad, India</div>
+  <div class="topbar-right"><a href="tel:+919999831332">☎ +91 9999 831 332</a><a href="mailto:explicit@explicitleathers.in">✉ explicit@explicitleathers.in</a></div>
+</div>
+<nav>
+  <a class="nav-logo" href="index.html">Explicit Leather<span>Group — Est. 1990</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="companies.html" class="active">Companies</a></li><li><a href="products.html">Products</a></li>
+    <li><a href="finished-leather.html">Finished Leather</a></li><li><a href="corporate-gifting.html">Gifting</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <div class="ph-eyebrow"><div class="line"></div><span>04 / 04 — Innovation Arm</span></div>
+    <h1>Scorpius<br><em>Enterprises</em></h1>
+    <p>Pushing the boundaries of leather technology — specialty finishes, cutting-edge tanning, and next-generation treatments for global fashion buyers.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><a href="companies.html">Companies</a><span class="breadcrumb-sep">›</span><span>Scorpius Enterprises</span></div>
+  </div>
+</div>
+<div class="marquee-strip"><div class="marquee-track"><div class="marquee-item"><span class="marquee-dot"></span>Specialty Finishes</div><div class="marquee-item"><span class="marquee-dot"></span>Innovation R&D</div><div class="marquee-item"><span class="marquee-dot"></span>Next-Gen Tanning</div><div class="marquee-item"><span class="marquee-dot"></span>Trend-Forward</div><div class="marquee-item"><span class="marquee-dot"></span>Custom Treatments</div><div class="marquee-item"><span class="marquee-dot"></span>Specialty Finishes</div><div class="marquee-item"><span class="marquee-dot"></span>Innovation R&D</div><div class="marquee-item"><span class="marquee-dot"></span>Next-Gen Tanning</div><div class="marquee-item"><span class="marquee-dot"></span>Trend-Forward</div><div class="marquee-item"><span class="marquee-dot"></span>Custom Treatments</div></div></div>
+
+<section style="padding:100px 60px;background:var(--ivory)">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Gallery</span><div class="eyebrow-line"></div></div>
+    <h2 class="section-title">Our <em>Work</em></h2>
+    <p class="section-desc">Add your company and product photos — replace each placeholder with your image.</p>
+  </div>
+  <div class="photo-hero-grid fade-up">
+    <div class="ph-item" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+      <!-- TO ADD: replace div below with <img src="your-main-photo.jpg" alt="Photo"> -->
+      <div class="ph-placeholder"><div class="ph-icon">📷</div><div class="ph-lbl">Main Photo</div><div class="ph-sub">img src="photo.jpg"</div></div>
+    </div>
+    <div class="ph-item" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+      <div class="ph-placeholder"><div class="ph-icon">📷</div><div class="ph-lbl">Photo 2</div><div class="ph-sub">img src="photo.jpg"</div></div>
+    </div>
+    <div class="ph-item" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+      <div class="ph-placeholder"><div class="ph-icon">📷</div><div class="ph-lbl">Photo 3</div><div class="ph-sub">img src="photo.jpg"</div></div>
+    </div>
+    <div class="ph-item" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+      <div class="ph-placeholder"><div class="ph-icon">📷</div><div class="ph-lbl">Photo 4</div><div class="ph-sub">img src="photo.jpg"</div></div>
+    </div>
+    <div class="ph-item" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+      <div class="ph-placeholder"><div class="ph-icon">📷</div><div class="ph-lbl">Photo 5</div><div class="ph-sub">img src="photo.jpg"</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="codetail">
+  <div class="dvis fade-up" style="background:linear-gradient(160deg,#1a0a12,#6a1a3a 55%,#C87090)">
+    <!-- <img src="company-photo.jpg" alt="The Innovation"> -->
+    <div class="dph"><div class="dph-i">🏭</div><div class="dph-l">Company / Factory Photo</div><div class="dph-s">Replace with img src=""</div></div>
+    <div class="dbadge"><div class="n">2005</div><div class="l">Founded</div></div>
+  </div>
+  <div class="fade-up">
+    <div class="section-header left">
+      <div class="section-eyebrow left"><div class="eyebrow-line"></div><span>About Scorpius Enterprises</span></div>
+      <h2 class="section-title">The Innovation<br><em>Arm</em></h2>
+    </div>
+    <p class="dbody">Scorpius Enterprises represents the <strong>innovation arm</strong> of the Explicit Leather Group, pushing the boundaries of leather technology with cutting-edge tanning processes and premium specialty finishes.</p>
+    <p class="dbody">Scorpius focuses on developing <strong>next-generation leather finishes and treatments</strong> that give the group a competitive edge in delivering trend-forward products to global fashion buyers.</p>
+    <div class="srow">
+      <div class="scell"><div class="sv">R&D</div><div class="sl">Focus Area</div></div>
+      <div class="scell"><div class="sv">Specialty</div><div class="sl">Finishes</div></div>
+      <div class="scell"><div class="sv">Global</div><div class="sl">Innovation Reach</div></div>
+    </div>
+    <div class="dtags"><span class="dtag">Innovation</span><span class="dtag">Specialty Finishes</span><span class="dtag">R&amp;D</span><span class="dtag">Manufacturing</span><span class="dtag">Sustainable</span></div>
+    <div style="margin-top:28px"><a href="contact.html" class="btn-primary">Send Inquiry</a></div>
+  </div>
+</section>
+<section class="products-catalog">
+  <div class="section-header fade-up">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Product Catalog</span><div class="eyebrow-line"></div></div>
+    <h2 class="section-title">Our <em>Collections</em></h2>
+    <p class="section-desc">Add your product photos — replace each placeholder with your image path.</p>
+  </div>
+  <div class="pg">
+    <div class="pcard fade-up">
+      <div class="pphoto" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+        <!-- <img src="product.jpg" alt="Next-Gen Specialty Finishes"> -->
+        <div class="pph"><div class="pph-i">📷</div><div class="pph-l">Add Product Photo</div></div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Signature</div>
+        <div class="pname">Next-Gen Specialty Finishes</div>
+        <div class="pdesc">Proprietary leather treatments developed in-house — finishes no other manufacturer offers globally.</div>
+        <a href="contact.html" class="plink">Enquire →</a>
+      </div>
+    </div>
+    <div class="pcard fade-up">
+      <div class="pphoto" style="background:linear-gradient(135deg,#12060a,#4a1028)">
+        <!-- <img src="product.jpg" alt="Advanced Tanning Processes"> -->
+        <div class="pph"><div class="pph-i">📷</div><div class="pph-l">Add Product Photo</div></div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">R&D</div>
+        <div class="pname">Advanced Tanning Processes</div>
+        <div class="pdesc">Cutting-edge chrome, vegetable, and combination tanning for superior quality results.</div>
+        <a href="contact.html" class="plink">Enquire →</a>
+      </div>
+    </div>
+    <div class="pcard fade-up">
+      <div class="pphoto" style="background:linear-gradient(135deg,#0a0308,#32081a)">
+        <!-- <img src="product.jpg" alt="Trend-Forward Treatments"> -->
+        <div class="pph"><div class="pph-i">📷</div><div class="pph-l">Add Product Photo</div></div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Fashion</div>
+        <div class="pname">Trend-Forward Treatments</div>
+        <div class="pdesc">Season-specific leather treatments developed after global trend research and buyer consultation.</div>
+        <a href="contact.html" class="plink">Enquire →</a>
+      </div>
+    </div>
+    <div class="pcard fade-up">
+      <div class="pphoto" style="background:linear-gradient(135deg,#180812,#5a1530)">
+        <!-- <img src="product.jpg" alt="Sustainable Finishes"> -->
+        <div class="pph"><div class="pph-i">📷</div><div class="pph-l">Add Product Photo</div></div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Eco</div>
+        <div class="pname">Sustainable Finishes</div>
+        <div class="pdesc">Eco-conscious tanning and finishing methods meeting global sustainability benchmarks.</div>
+        <a href="contact.html" class="plink">Enquire →</a>
+      </div>
+    </div>
+    <div class="pcard fade-up">
+      <div class="pphoto" style="background:linear-gradient(135deg,#100508,#40101e)">
+        <!-- <img src="product.jpg" alt="Metallic &amp; Foil Treatments"> -->
+        <div class="pph"><div class="pph-i">📷</div><div class="pph-l">Add Product Photo</div></div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Specialty</div>
+        <div class="pname">Metallic &amp; Foil Treatments</div>
+        <div class="pdesc">Fashion-forward metallic coatings and foil laminations for high-impact fashion.</div>
+        <a href="contact.html" class="plink">Enquire →</a>
+      </div>
+    </div>
+    <div class="pcard fade-up">
+      <div class="pphoto" style="background:linear-gradient(135deg,#1a0a12,#6a1a3a)">
+        <!-- <img src="product.jpg" alt="Bespoke R&amp;D Projects"> -->
+        <div class="pph"><div class="pph-i">📷</div><div class="pph-l">Add Product Photo</div></div>
+      </div>
+      <div class="pinfo">
+        <div class="pcat">Custom</div>
+        <div class="pname">Bespoke R&amp;D Projects</div>
+        <div class="pdesc">Work with our innovation team to develop exclusive treatments for your brand.</div>
+        <a href="contact.html" class="plink">Start Project →</a>
+      </div>
+    </div></div>
+</section>
+
+<section class="stats-banner">
+  <div class="stat-item fade-up"><div class="stat-num">R&D</div><span class="stat-unit">Focus</span><div class="stat-label">Innovation First</div></div>
+  <div class="stat-item fade-up"><div class="stat-num">8+</div><span class="stat-unit">Specialty</span><div class="stat-label">Finish Types</div></div>
+  <div class="stat-item fade-up"><div class="stat-num">Eco</div><span class="stat-unit">Conscious</span><div class="stat-label">Sustainable</div></div>
+  <div class="stat-item fade-up"><div class="stat-num">Global</div><span class="stat-unit">Fashion</span><div class="stat-label">Trend Research</div></div>
+</section>
+
+<section class="inqsec">
+  <div class="fade-up">
+    <div class="section-header left">
+      <div class="section-eyebrow left"><div class="eyebrow-line"></div><span>Get In Touch</span></div>
+      <h2 class="section-title">Request Our<br><em>Catalogue</em></h2>
+      <p class="section-desc">Our team responds within 24 hours.</p>
+    </div>
+    <div style="margin-top:32px">
+      <div class="crow"><div class="cico">📍</div><div><span class="clbl">Address</span><span class="cval">Plot No. 8, 14/3, Mathura Road, Faridabad</span></div></div>
+      <div class="crow"><div class="cico">☎</div><div><span class="clbl">Phone</span><span class="cval">+91 9999 831 332</span></div></div>
+      <div class="crow"><div class="cico">✉</div><div><span class="clbl">Email</span><span class="cval">explicit@explicitleathers.in</span></div></div>
+    </div>
+    <div style="margin-top:28px"><a href="companies.html" class="btn-ghost">← Back to Companies <span class="arr"></span></a></div>
+  </div>
+  <div class="iform fade-up">
+    <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--espresso);margin-bottom:6px">Send Inquiry</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:24px">Scorpius Enterprises — Specialty Finishes &amp; R&amp;D</div>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email Address">
+    <input type="text" placeholder="Company / Brand Name">
+    <input type="text" placeholder="Requirement (e.g. Custom Specialty Finish)">
+    <textarea placeholder="Describe your requirement in detail..."></textarea>
+    <button class="btn-primary" style="width:100%;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.18em">Send Inquiry →</button>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand-name">Explicit Leather Group</div><div class="footer-brand-sub">Est. 1990 · Faridabad, India</div><p class="footer-desc">India's premier leather manufacturing group — pioneers of garment-washed and specialty-dyed leather for global markets.</p><div class="footer-social"><a class="social-btn" href="#">in</a><a class="social-btn" href="#">IG</a><a class="social-btn" href="#">fb</a></div></div>
+    <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Leather Products</a></li><li><a href="finished-leather.html">Finished Leather</a></li><li><a href="corporate-gifting.html">Corporate Gifting</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    <div><div class="footer-col-title">Group Companies</div><ul class="footer-links">
+      <li><a href="company-explicit-leathers.html">Explicit Leathers</a></li>
+      <li><a href="company-exquisite.html">Exquisite Enterprises</a></li>
+      <li><a href="company-gee-gee.html">Gee &amp; Gee Industries</a></li>
+      <li><a href="company-scorpius.html">Scorpius Enterprises</a></li>
+      <li><a href="https://nauvab.com/" target="_blank">Nauvab ↗</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Explicit Leather Group. All rights reserved.</span><span>Faridabad, Haryana, India</span></div>
+</footer>
+<a class="scroll-top" href="#" id="scrollTop">↑</a>
+<script src="common.js"></script>
+</body></html>
