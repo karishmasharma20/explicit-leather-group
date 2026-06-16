@@ -2,182 +2,439 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Our Companies — Explicit Leather Group</title>
+<title>Corporate Gifting | Explicit Leather Group</title>
+<meta name="description" content="Bespoke leather corporate gifts — wallets, portfolios, diaries, bags and accessories. Custom branding, bulk orders and premium packaging by Explicit Leather Group.">
 <link rel="stylesheet" href="global.css">
 <style>
-.company-block{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.company-block.reverse{direction:rtl}.company-block.reverse>*{direction:ltr}
-.company-block:nth-child(even){background:var(--white)}.company-block:nth-child(odd){background:var(--ivory)}
-.cb-visual{position:relative;height:460px;overflow:hidden}
-.cbv1{background:linear-gradient(160deg,#1a0e05,#6B4423 50%,#C8A96E)}
-.cbv2{background:linear-gradient(160deg,#0e1a05,#3a6a1a 50%,#8BC858)}
-.cbv3{background:linear-gradient(160deg,#0e0a1a,#3a2070 50%,#A870C8)}
-.cbv4{background:linear-gradient(160deg,#1a0a12,#6a1a3a 50%,#C87090)}
-.cb-tex{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 3px,rgba(255,255,255,.02) 3px,rgba(255,255,255,.02) 6px)}
-.cb-num{position:absolute;top:28px;left:28px;font-family:'Playfair Display',serif;font-size:80px;font-weight:700;color:rgba(255,255,255,.08);line-height:1}
-.cb-badge{position:absolute;bottom:28px;right:28px;background:rgba(0,0,0,.5);border:1px solid rgba(200,169,110,.3);backdrop-filter:blur(8px);padding:14px 18px}
-.cb-badge .bl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);margin-bottom:4px}
-.cb-badge .bv{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white)}
-.cb-text .company-num{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--tan-dark);font-weight:500;margin-bottom:12px}
-.cb-text .company-name{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--espresso);line-height:1.1;margin-bottom:8px}
-.cb-text .company-name em{font-style:italic;color:var(--tan-dark)}
-.cb-text .company-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--muted);margin-bottom:24px;line-height:1.5}
-.cb-divider{width:48px;height:2px;background:var(--gold);margin-bottom:24px}
-.cb-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:20px;font-weight:300}
-.cb-body strong{color:var(--espresso);font-weight:500}
-.cb-specs{display:flex;gap:28px;margin:24px 0;padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.cb-spec .s-val{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--espresso)}
-.cb-spec .s-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.cb-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.cb-tag{padding:6px 14px;background:var(--tan-light);color:var(--brown);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
-.overview-grid{padding:80px 60px;background:var(--espresso);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.og-item{padding:50px 30px;border-right:1px solid rgba(200,169,110,.15);text-align:center;transition:background .3s;cursor:pointer}
-.og-item:last-child{border-right:none}
-.og-item:hover{background:rgba(200,169,110,.06)}
-.og-num{font-family:'Playfair Display',serif;font-size:12px;font-weight:400;color:var(--gold);letter-spacing:.3em;margin-bottom:14px}
-.og-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3}
-.og-desc{font-size:12px;color:rgba(232,217,188,.55);line-height:1.6}
+.gifting-hero{min-height:72vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.gifting-hero-left{display:flex;flex-direction:column;justify-content:center;padding:100px 60px;position:relative;z-index:2}
+.gifting-hero-right{position:relative;overflow:hidden}
+.gifting-hero-right .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#2A1A0E 0%,#6B4423 50%,#C8A96E 100%)}
+.gifting-hero-right .hero-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px),repeating-linear-gradient(-45deg,transparent,transparent 2px,rgba(255,255,255,.02) 2px,rgba(255,255,255,.02) 4px)}
+.gifting-hero-right .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--ivory) 0%,transparent 20%);pointer-events:none;z-index:1}
+.gifting-badge{position:absolute;bottom:80px;left:-20px;background:var(--white);border:1px solid var(--border);padding:24px 28px;z-index:10;box-shadow:0 20px 60px rgba(42,26,14,.15);animation:floatY 3s ease-in-out infinite alternate}
+@keyframes floatY{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.gifting-badge .num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--espresso);line-height:1}
+.gifting-badge .lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.gifting-badge .bar{width:30px;height:2px;background:var(--gold);margin-bottom:12px}
+
+.gifting-body{padding:100px 60px;background:var(--white)}
+.g-tabs{display:flex;gap:0;margin-bottom:56px;border-bottom:1px solid var(--border)}
+.g-tab{background:transparent;border:none;padding:14px 32px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;font-weight:500;position:relative;transition:color .3s;font-family:inherit}
+.g-tab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.g-tab.active,.g-tab:hover{color:var(--espresso)}
+.g-tab.active::after{transform:scaleX(1)}
+.g-panel{display:none}
+.g-panel.active{display:block}
+.g-intro{font-size:15px;color:var(--muted);line-height:1.85;max-width:640px;margin:14px 0 48px;font-weight:300}
+
+.g-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.g-card{background:var(--ivory);border:1px solid var(--border);overflow:hidden;transition:box-shadow .4s,transform .4s}
+.g-card:hover{box-shadow:0 20px 50px rgba(42,26,14,.11);transform:translateY(-4px)}
+.g-card-visual{height:160px;position:relative;overflow:hidden}
+.gv1{background:linear-gradient(135deg,#2A1A0E,#8B5A2B)}
+.gv2{background:linear-gradient(135deg,#1E1206,#6B4423)}
+.gv3{background:linear-gradient(135deg,#0E1218,#3A4A5A)}
+.gv4{background:linear-gradient(135deg,#180E06,#A07840)}
+.gv5{background:linear-gradient(135deg,#120A18,#6B4A8B)}
+.gv6{background:linear-gradient(135deg,#0A1812,#2B6B4A)}
+.g-card-visual .pv-pat{position:absolute;inset:0;background-image:radial-gradient(circle at 30% 30%,rgba(255,255,255,.06) 0%,transparent 50%),radial-gradient(circle at 70% 70%,rgba(255,255,255,.04) 0%,transparent 50%)}
+.g-card-tag{position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);padding:5px 12px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);font-weight:500}
+.g-card-body{padding:26px}
+.g-card-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--espresso);margin-bottom:8px}
+.g-card-desc{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:18px;font-weight:300}
+.g-card-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+.g-card-list li{font-size:12px;color:var(--muted);padding-left:16px;position:relative}
+.g-card-list li::before{content:'◆';position:absolute;left:0;color:var(--gold);font-size:7px;top:3px}
+
+.process-strip{background:var(--espresso);padding:100px 60px;position:relative;overflow:hidden}
+.process-strip::before{content:'';position:absolute;top:-120px;right:-120px;width:600px;height:600px;border:1px solid rgba(200,169,110,.08);border-radius:50%}
+.process-strip::after{content:'';position:absolute;top:-70px;right:-70px;width:350px;height:350px;border:1px solid rgba(200,169,110,.06);border-radius:50%}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:1100px;margin:60px auto 0;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:rgba(200,169,110,.2);z-index:0}
+.pstep{text-align:center;padding:20px 16px;position:relative;z-index:1}
+.pstep-num{width:56px;height:56px;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);font-weight:700;margin:0 auto 20px}
+.pstep h3{font-family:'Playfair Display',serif;color:var(--white);font-size:15px;margin-bottom:8px;font-weight:600}
+.pstep p{color:rgba(232,217,188,.6);font-size:12px;line-height:1.65}
+
+.packaging-section{padding:100px 60px;background:var(--cream)}
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:3px;margin-top:56px}
+.pkg-card{position:relative;padding:40px 32px;background:var(--ivory);border:1px solid var(--border);transition:all .4s;overflow:hidden}
+.pkg-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .4s}
+.pkg-card:hover{box-shadow:0 20px 50px rgba(42,26,14,.09)}
+.pkg-card:hover::before{height:100%}
+.pkg-card.featured{background:var(--espresso)}
+.pkg-card.featured h3{color:var(--gold)}
+.pkg-card.featured p{color:rgba(232,217,188,.7)}
+.pkg-card.featured .pkg-num{color:rgba(200,169,110,.3)}
+.pkg-num{font-family:'Playfair Display',serif;font-size:11px;color:var(--border);letter-spacing:.3em;margin-bottom:20px;display:block}
+.pkg-icon{font-size:28px;margin-bottom:18px;display:block}
+.pkg-card h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--espresso);margin-bottom:10px}
+.pkg-card p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300}
+
+.tiers-section{padding:100px 60px;background:var(--white)}
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.tier-card{border:1px solid var(--border);padding:40px 32px;position:relative;transition:all .4s}
+.tier-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s}
+.tier-card:hover::after{transform:scaleX(1)}
+.tier-card.featured{background:var(--espresso);border-color:transparent}
+.tier-card.featured .tier-name{color:var(--gold)}
+.tier-card.featured .tier-range{color:rgba(200,169,110,.6)}
+.tier-card.featured .tier-feature{color:rgba(232,217,188,.8);border-color:rgba(200,169,110,.15)}
+.tier-label{display:inline-block;font-size:9px;letter-spacing:.24em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--gold);color:var(--gold);margin-bottom:20px}
+.tier-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--espresso);line-height:1;margin-bottom:6px}
+.tier-range{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:28px}
+.tier-features{list-style:none;padding:0}
+.tier-feature{font-size:13px;color:var(--muted);padding:11px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.tier-feature .chk{color:var(--gold);font-size:10px;flex-shrink:0}
+.tier-feature .crs{color:rgba(107,68,35,.3);font-size:10px;flex-shrink:0}
+
+.occasions-section{padding:100px 60px;background:var(--ivory)}
+.occ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.occ-card{padding:32px 24px;background:var(--white);border:1px solid var(--border);text-align:center;transition:all .35s}
+.occ-card:hover{background:var(--espresso);border-color:transparent;transform:translateY(-4px);box-shadow:0 20px 50px rgba(42,26,14,.13)}
+.occ-card:hover .occ-title{color:var(--gold)}
+.occ-card:hover .occ-sub{color:rgba(232,217,188,.6)}
+.occ-icon{font-size:30px;margin-bottom:14px;display:block}
+.occ-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--espresso);margin-bottom:5px;transition:color .3s}
+.occ-sub{font-size:12px;color:var(--muted);font-weight:300;transition:color .3s}
+
+.enquiry-section{background:var(--espresso);padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;overflow:hidden}
+.enquiry-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border:1px solid rgba(200,169,110,.08);border-radius:50%}
+.enq-h{font-family:'Playfair Display',serif;font-size:clamp(32px,3vw,48px);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:16px}
+.enq-h em{font-style:italic;color:var(--gold)}
+.enq-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(232,217,188,.7);margin-bottom:36px;line-height:1.6}
+.enq-contact{display:flex;flex-direction:column;gap:20px;position:relative;z-index:2}
+.ec-item{display:flex;align-items:flex-start;gap:16px}
+.ec-icon{width:38px;height:38px;border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:15px;flex-shrink:0}
+.ec-text strong{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);font-weight:500;margin-bottom:3px}
+.ec-text a,.ec-text span{font-size:14px;color:rgba(232,217,188,.8);line-height:1.5;display:block}
+.enq-form{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px}
+.fg label{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);font-weight:500;margin-bottom:8px}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(200,169,110,.2);padding:13px 16px;color:var(--white);font-size:14px;font-family:inherit;outline:none;transition:border-color .3s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(232,217,188,.3)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(200,169,110,.6)}
+.fg select option{background:var(--espresso);color:var(--white)}
+.fg textarea{resize:vertical;min-height:110px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.enq-submit{background:var(--gold);color:var(--espresso);border:none;padding:15px 32px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;cursor:pointer;font-family:inherit;transition:background .3s;width:100%}
+.enq-submit:hover{background:var(--tan-light)}
+
+@media(max-width:900px){
+  .gifting-hero,.enquiry-section{grid-template-columns:1fr}
+  .gifting-hero-right{display:none}
+  .gifting-body,.packaging-section,.tiers-section,.occasions-section,.process-strip{padding:60px 24px}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .process-steps::before{display:none}
+  .tiers-grid,.occ-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .gifting-hero-left{padding:60px 24px}
+  .fg-row{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
 <div class="topbar">
   <div>📍 Plot No. 8, 14/3, Mathura Road, Faridabad, India</div>
-  <div class="topbar-right"><a href="tel:+919999831332">☎ +91 9999 831 332</a><a href="mailto:gunjanbali@explicitleathers.in">✉ gunjanbali@explicitleathers.in</a></div>
+  <div class="topbar-right">
+    <a href="tel:+919999831332">☎ +91 9999 831 332</a>
+    <a href="mailto:explicit@explicitleathers.in">✉ explicit@explicitleathers.in</a>
+    <a href="https://www.instagram.com/explicitleathergroup/" target="_blank">◆ Instagram</a>
+  </div>
 </div>
+
 <nav>
   <a class="nav-logo" href="index.html">Explicit Leather<span>Group — Est. 1990</span></a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="companies.html" class="active">Companies</a></li><li><a href="products.html">Products</a></li>
-    <li><a href="finished-leather.html">Finished Leather</a></li><li><a href="corporate-gifting.html">Gifting</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="companies.html">Companies</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="finished-leather.html">Finished Leather</a></li>
+    <li><a href="corporate-gifting.html" class="active">Gifting</a></li>
     <li><a href="contact.html" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
-<div class="page-hero">
-  <div class="page-hero-inner fade-up">
-    <div class="ph-eyebrow"><div class="line"></div><span>The Group</span></div>
-    <h1>Four Companies,<br>One <em>Vision</em></h1>
-    <p>Each enterprise within the Explicit Leather Group specialises in a unique domain — together forming India's most integrated premium leather conglomerate.</p>
-    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Our Companies</span></div>
+<section class="gifting-hero">
+  <div class="gifting-hero-left">
+    <div class="hero-eyebrow fade-up"><div class="line"></div><span>Bespoke Leather — Corporate Gifting</span></div>
+    <h1 class="fade-up" style="font-family:'Playfair Display',serif;font-size:clamp(44px,5vw,72px);line-height:1.05;font-weight:700;color:var(--espresso);margin-bottom:14px">Gifts That<br><em style="font-style:italic;color:var(--tan-dark)">Endure.</em></h1>
+    <p class="fade-up" style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--muted);font-style:italic;margin-bottom:40px;line-height:1.55;max-width:420px">Hand-crafted leather gifts — wallets, portfolios, diaries and bags — custom-branded with your identity for every corporate occasion.</p>
+    <div class="hero-actions fade-up">
+      <a href="#enquiry" class="btn-primary">Request a Quote</a>
+      <a href="#catalogue" class="btn-ghost">View Catalogue <span class="arr">→</span></a>
+    </div>
+    <div class="hero-numbers fade-up" style="display:flex;gap:40px;margin-top:52px;padding-top:36px;border-top:1px solid var(--border)">
+      <div class="hn"><div class="n" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--espresso)">35+</div><div class="l" style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px">Years of Craft</div></div>
+      <div class="hn"><div class="n" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--espresso)">25</div><div class="l" style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px">Min. Order Units</div></div>
+      <div class="hn"><div class="n" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--espresso)">100%</div><div class="l" style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px">Genuine Leather</div></div>
+    </div>
   </div>
+  <div class="gifting-hero-right">
+    <div class="hero-bg"></div><div class="hero-texture"></div><div class="hero-overlay"></div>
+    <div class="gifting-badge"><div class="bar"></div><div class="num">25+</div><div class="lbl">Min. Order<br>Units</div></div>
+  </div>
+</section>
+
+<div class="marquee-strip"><div class="marquee-track" id="mt">
+  <div class="marquee-item"><span class="marquee-dot"></span>Full-Grain Leather Gifts</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Custom Logo Embossing</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Gold Foil Stamping</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Pan-India Delivery</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>GST Invoice Provided</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Bulk Orders — 25 to 5000 Units</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>7–10 Day Turnaround</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Full-Grain Leather Gifts</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Custom Logo Embossing</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Gold Foil Stamping</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Pan-India Delivery</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>GST Invoice Provided</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>Bulk Orders — 25 to 5000 Units</div>
+  <div class="marquee-item"><span class="marquee-dot"></span>7–10 Day Turnaround</div>
+</div></div>
+
+<div class="recognition-banner">
+  <div class="rec-item">◆ In-House Manufacturing</div>
+  <div class="rec-divider"></div>
+  <div class="rec-item">◆ Custom Logo Embossing</div>
+  <div class="rec-divider"></div>
+  <div class="rec-item">◆ Gift-Ready Packaging</div>
+  <div class="rec-divider"></div>
+  <div class="rec-item">◆ GST Invoice Provided</div>
 </div>
 
-<div class="overview-grid">
-  <div class="og-item fade-up"><div class="og-num">01</div><div class="og-name">Explicit Leathers</div><div class="og-desc">Garments &amp; accessories — the flagship enterprise</div></div>
-  <div class="og-item fade-up"><div class="og-num">02</div><div class="og-name">Exquisite Enterprises</div><div class="og-desc">Luxury goods for international markets</div></div>
-  <div class="og-item fade-up"><div class="og-num">03</div><div class="og-name">Gee &amp; Gee Industries</div><div class="og-desc">Tannery operations &amp; finished leather</div></div>
-  <div class="og-item fade-up"><div class="og-num">04</div><div class="og-name">Scorpius Enterprises</div><div class="og-desc">Innovative leather manufacturing</div></div>
-</div>
-
-<!-- COMPANY 1 -->
-<section class="company-block">
-  <div class="cb-visual fade-up">
-    <div class="cbv1"></div><div class="cb-tex"></div>
-    <div class="cb-num">01</div>
-    <div class="cb-badge"><div class="bl">Production</div><div class="bv">180K/yr</div></div>
-  </div>
-  <div class="cb-text fade-up">
-    <div class="company-num">01 / 04</div>
-    <div class="company-name">Explicit <em>Leathers</em></div>
-    <div class="company-sub">The flagship enterprise of the group</div>
-    <div class="cb-divider"></div>
-    <p class="cb-body">The original and <strong>flagship enterprise</strong> of the Explicit Leather Group. Founded in 1990, Explicit Leathers is a leather goods and garments manufacturing firm and a <strong>Recognised Export House</strong> under the Council of Leather Exports, Government of India.</p>
-    <p class="cb-body">Explicit are world-renowned for their <strong>Garment Washed and Garment Dyed products</strong>, having pioneered the "used", "oiled", and "retro" looks which remain in vogue globally after 12+ years.</p>
-    <div class="cb-specs">
-      <div class="cb-spec"><div class="s-val">180K</div><div class="s-lbl">Garments / Year</div></div>
-      <div class="cb-spec"><div class="s-val">35+</div><div class="s-lbl">Years Operating</div></div>
-      <div class="cb-spec"><div class="s-val">Global</div><div class="s-lbl">Export Markets</div></div>
+<section class="gifting-body" id="catalogue">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header left fade-up">
+      <div class="section-eyebrow left"><div class="eyebrow-line"></div><span>Product Catalogue</span></div>
+      <h2 class="section-title">Choose Your <em>Gift Range</em></h2>
     </div>
-    <div class="cb-tags"><span class="cb-tag">Garments</span><span class="cb-tag">Accessories</span><span class="cb-tag">Export House</span><span class="cb-tag">Washed Leather</span></div>
+    <div class="g-tabs">
+      <button class="g-tab active" onclick="switchG('products',this)">Gift Products</button>
+      <button class="g-tab" onclick="switchG('branding',this)">Branding & Engraving</button>
+      <button class="g-tab" onclick="switchG('occasions',this)">Occasions & Bulk</button>
+    </div>
+
+    <div id="g-products" class="g-panel active">
+      <p class="g-intro">Our full range of hand-crafted leather gifts — each available with custom logo embossing, foil stamping, or laser engraving. Minimum 25 units. Dispatched within 7–10 working days.</p>
+      <div class="g-cards">
+        <div class="g-card fade-up"><div class="g-card-visual gv1"><div class="pv-pat"></div><div class="g-card-tag">Bestseller</div></div><div class="g-card-body"><div class="g-card-name">Wallets & Card Holders</div><div class="g-card-desc">Classic bifold wallets, slim card holders, and travel wallets in full-grain cowhide — the most requested corporate gift across all industries.</div><ul class="g-card-list"><li>Full-grain & top-grain options</li><li>RFID-blocked variants available</li><li>8 colour options</li><li>Min. 25 units</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv2"><div class="pv-pat"></div><div class="g-card-tag">Premium</div></div><div class="g-card-body"><div class="g-card-name">Bags & Portfolio Folders</div><div class="g-card-desc">Executive laptop bags, A4 portfolio folders, structured totes and backpacks — built for the boardroom, branded with your mark.</div><ul class="g-card-list"><li>15" laptop fit available</li><li>Brass & gold hardware</li><li>Padded compartments</li><li>Min. 25 units</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv3"><div class="pv-pat"></div><div class="g-card-tag">Popular</div></div><div class="g-card-body"><div class="g-card-name">Diaries & Journals</div><div class="g-card-desc">Hard-cover A5 executive diaries, soft-cover journals and leather desk planners — dated or undated with gold foil branding on the cover.</div><ul class="g-card-list"><li>A5 & A6 sizes</li><li>Dated or undated pages</li><li>Ribbon marker included</li><li>Min. 50 units</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv4"><div class="pv-pat"></div><div class="g-card-tag">Desk Range</div></div><div class="g-card-body"><div class="g-card-name">Desk Accessories</div><div class="g-card-desc">Leather pen holders, desk mats, valet trays and coaster sets — refined additions to any executive workspace, gift-boxed and branded.</div><ul class="g-card-list"><li>Full-grain leather finish</li><li>Corner or panel stamp</li><li>Gift-boxed presentation</li><li>Min. 25 units</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv5"><div class="pv-pat"></div><div class="g-card-tag">Bespoke</div></div><div class="g-card-body"><div class="g-card-name">Gift Sets & Combos</div><div class="g-card-desc">Curated sets — diary + pen, wallet + card holder, or fully custom combinations — in a single premium magnetic-close box with branded tissue.</div><ul class="g-card-list"><li>Custom combo building</li><li>Magnetic close gift box</li><li>Branded tissue & ribbon</li><li>Min. 25 sets</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv6"><div class="pv-pat"></div><div class="g-card-tag">Travel</div></div><div class="g-card-body"><div class="g-card-name">Travel Accessories</div><div class="g-card-desc">Passport holders, luggage tags, travel wallets and toiletry bags — ideal for overseas delegation gifting and senior employee recognition.</div><ul class="g-card-list"><li>Passport slot included</li><li>Boarding pass sleeve</li><li>Luggage tag with nameplate</li><li>Min. 25 units</li></ul></div></div>
+      </div>
+    </div>
+
+    <div id="g-branding" class="g-panel">
+      <p class="g-intro">Every product carries your brand's identity through precise, lasting techniques. Share your logo in AI or EPS format — our team handles the artwork, mock-up, and production entirely.</p>
+      <div class="g-cards">
+        <div class="g-card fade-up"><div class="g-card-visual gv1"><div class="pv-pat"></div><div class="g-card-tag">Most Popular</div></div><div class="g-card-body"><div class="g-card-name">Gold Foil Stamping</div><div class="g-card-desc">Hot-stamped gold or silver foil logo on the leather surface — the most premium and visible branding method for corporate leather gifts.</div><ul class="g-card-list"><li>Gold or silver foil options</li><li>Up to 2 positions per item</li><li>Sharp fine-detail results</li><li>Lasts the product's lifetime</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv2"><div class="pv-pat"></div><div class="g-card-tag">Understated</div></div><div class="g-card-body"><div class="g-card-name">Blind Embossing</div><div class="g-card-desc">Subtle tone-on-tone logo impression pressed into the leather — an understated, sophisticated branding choice for premium gifting.</div><ul class="g-card-list"><li>No ink or foil used</li><li>Debossed logo effect</li><li>Up to 3 positions</li><li>Premium minimalist look</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv3"><div class="pv-pat"></div><div class="g-card-tag">Precision</div></div><div class="g-card-body"><div class="g-card-name">Laser Engraving</div><div class="g-card-desc">Precision laser-cut logo onto the leather surface — ideal for geometric logos, fine typography, and dark-coloured leathers.</div><ul class="g-card-list"><li>High-detail accuracy</li><li>Great for dark leathers</li><li>No additional tooling cost</li><li>Same-day artwork setup</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv4"><div class="pv-pat"></div><div class="g-card-tag">Included 50+</div></div><div class="g-card-body"><div class="g-card-name">Branded Gift Box</div><div class="g-card-desc">Rigid lid-and-base box with your logo hot-stamped on the lid. Magnetic closure and satin ribbon included on orders above 50 units.</div><ul class="g-card-list"><li>Matte or gloss finish</li><li>Magnetic closure</li><li>Satin ribbon</li><li>Custom box colour</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv5"><div class="pv-pat"></div><div class="g-card-tag">Events</div></div><div class="g-card-body"><div class="g-card-name">Branded Carry Bags</div><div class="g-card-desc">Kraft or matte laminate carry bag with your logo — ideal for event distribution and conference delegate kits.</div><ul class="g-card-list"><li>Cord or flat handles</li><li>Custom 2-colour print</li><li>Tissue paper insert</li><li>Min. 50 bags</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv6"><div class="pv-pat"></div><div class="g-card-tag">Personal Touch</div></div><div class="g-card-body"><div class="g-card-name">Personalised Gift Cards</div><div class="g-card-desc">Printed message card with your brand header inside each gift box. Per-unit personalisation available for senior-level gifting.</div><ul class="g-card-list"><li>Full-colour card print</li><li>Brand header included</li><li>Per-unit personalisation</li><li>Envelope included</li></ul></div></div>
+      </div>
+    </div>
+
+    <div id="g-occasions" class="g-panel">
+      <p class="g-intro">We handle bulk orders from 25 to 5,000+ units — managing production, branding, quality checks, and delivery end-to-end. Every corporate occasion, every season, covered.</p>
+      <div class="g-cards">
+        <div class="g-card fade-up"><div class="g-card-visual gv1"><div class="pv-pat"></div><div class="g-card-tag">Season</div></div><div class="g-card-body"><div class="g-card-name">Festive Gifting</div><div class="g-card-desc">Diwali, Christmas, Eid, and New Year programmes — planned and dispatched ahead of the season with festive branded packaging.</div><ul class="g-card-list"><li>Seasonal packaging themes</li><li>Advance booking discounts</li><li>Pan-India courier included</li><li>Bulk dispatch management</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv2"><div class="pv-pat"></div><div class="g-card-tag">HR Programme</div></div><div class="g-card-body"><div class="g-card-name">Employee Recognition</div><div class="g-card-desc">Long-service awards, performance rewards, and milestone gifting — premium leather pieces employees will use and remember for years.</div><ul class="g-card-list"><li>Personalised name embossing</li><li>Certificate holder options</li><li>Tiered gift programmes</li><li>HR team coordination</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv3"><div class="pv-pat"></div><div class="g-card-tag">Retention</div></div><div class="g-card-body"><div class="g-card-name">Client Gifting</div><div class="g-card-desc">Onboarding kits, retention gifts, and key-account appreciation — branded leather that leaves a lasting professional impression.</div><ul class="g-card-list"><li>Premium packaging standard</li><li>Discrete branding options</li><li>Direct-to-client dispatch</li><li>Individual address delivery</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv4"><div class="pv-pat"></div><div class="g-card-tag">Events</div></div><div class="g-card-body"><div class="g-card-name">Conferences & Events</div><div class="g-card-desc">Delegate welcome kits, speaker gifts, and brand activation giveaways — supplied in bulk with event-ready packaging and labelling.</div><ul class="g-card-list"><li>Event branding on packaging</li><li>Quick bulk turnaround</li><li>On-site delivery available</li><li>Min. 50 units</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv5"><div class="pv-pat"></div><div class="g-card-tag">Onboarding</div></div><div class="g-card-body"><div class="g-card-name">New Joinee Kits</div><div class="g-card-desc">First-day welcome kits with leather diary, card holder, and branded pen set — make every new employee feel valued from day one.</div><ul class="g-card-list"><li>Standard kit templates</li><li>Custom kit building</li><li>Monthly supply contracts</li><li>HR integration available</li></ul></div></div>
+        <div class="g-card fade-up"><div class="g-card-visual gv6"><div class="pv-pat"></div><div class="g-card-tag">Export Quality</div></div><div class="g-card-body"><div class="g-card-name">Overseas Delegation Gifts</div><div class="g-card-desc">Premium India-made leather gifts for international guests — presentation-ready with luxury packaging and bilingual gift cards.</div><ul class="g-card-list"><li>Export-quality leather</li><li>Bilingual gift cards</li><li>International shipping</li><li>Customs documentation</li></ul></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- COMPANY 2 -->
-<section class="company-block reverse">
-  <div class="cb-visual fade-up">
-    <div class="cbv2"></div><div class="cb-tex"></div>
-    <div class="cb-num">02</div>
-    <div class="cb-badge"><div class="bl">Segment</div><div class="bv">Luxury Goods</div></div>
-  </div>
-  <div class="cb-text fade-up">
-    <div class="company-num">02 / 04</div>
-    <div class="company-name">Exquisite <em>Enterprises</em></div>
-    <div class="company-sub">High-end leather goods for global luxury markets</div>
-    <div class="cb-divider"></div>
-    <p class="cb-body">Exquisite Enterprises focuses on the <strong>premium accessories and luxury goods</strong> segment, crafting leather products that meet the exacting standards of international fashion houses and retailers.</p>
-    <p class="cb-body">From handbags to bespoke leather accessories, every piece is crafted with <strong>meticulous attention to detail</strong>, using the finest leathers sourced from the group's own tanneries.</p>
-    <div class="cb-specs">
-      <div class="cb-spec"><div class="s-val">Luxury</div><div class="s-lbl">Market Focus</div></div>
-      <div class="cb-spec"><div class="s-val">Bespoke</div><div class="s-lbl">Customisation</div></div>
-      <div class="cb-spec"><div class="s-val">EU+</div><div class="s-lbl">Export Markets</div></div>
+<section class="process-strip">
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>How It Works</span><div class="eyebrow-line"></div></div>
+      <h2 class="section-title" style="color:var(--white)">From Enquiry to <em>Delivery</em></h2>
     </div>
-    <div class="cb-tags"><span class="cb-tag">Handbags</span><span class="cb-tag">Accessories</span><span class="cb-tag">Luxury Goods</span><span class="cb-tag">Custom Orders</span></div>
+  </div>
+  <div class="process-steps">
+    <div class="pstep"><div class="pstep-num">1</div><h3>Share Requirements</h3><p>Call, WhatsApp or fill the form — product, quantity, occasion, deadline.</p></div>
+    <div class="pstep"><div class="pstep-num">2</div><h3>Receive Quote</h3><p>Pricing, leather swatches and product samples sent within 24 hours.</p></div>
+    <div class="pstep"><div class="pstep-num">3</div><h3>Logo Artwork</h3><p>Share logo in AI/EPS. Digital mock-up prepared for your approval at no cost.</p></div>
+    <div class="pstep"><div class="pstep-num">4</div><h3>Confirm Order</h3><p>Approve sample, confirm design, and make 50% advance to begin production.</p></div>
+    <div class="pstep"><div class="pstep-num">5</div><h3>Delivery</h3><p>Gift-boxed and dispatched within 7–10 working days. Pan-India courier included.</p></div>
   </div>
 </section>
 
-<!-- COMPANY 3 -->
-<section class="company-block">
-  <div class="cb-visual fade-up">
-    <div class="cbv3"></div><div class="cb-tex"></div>
-    <div class="cb-num">03</div>
-    <div class="cb-badge"><div class="bl">Capacity</div><div class="bv">84L Sq Ft</div></div>
-  </div>
-  <div class="cb-text fade-up">
-    <div class="company-num">03 / 04</div>
-    <div class="company-name">Gee &amp; Gee <em>Industries</em></div>
-    <div class="company-sub">Tannery operations &amp; finished leather production</div>
-    <div class="cb-divider"></div>
-    <p class="cb-body">Gee &amp; Gee Industries is the tannery backbone of the Explicit Leather Group. Their operations contribute to the group's <strong>combined production capacity of 84 Lakh sq ft per year</strong> — one of the largest in the region.</p>
-    <p class="cb-body">The company specialises in <strong>finishing and processing raw hides</strong> into premium finished leathers that supply both the group's own manufacturing units and external buyers globally.</p>
-    <div class="cb-specs">
-      <div class="cb-spec"><div class="s-val">84L</div><div class="s-lbl">Sq Ft / Year</div></div>
-      <div class="cb-spec"><div class="s-val">Multi</div><div class="s-lbl">Leather Types</div></div>
-      <div class="cb-spec"><div class="s-val">B2B</div><div class="s-lbl">Supply Focus</div></div>
+<section class="packaging-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Presentation</span><div class="eyebrow-line"></div></div>
+      <h2 class="section-title">Gift Packaging <em>Options</em></h2>
+      <p class="section-desc">Every order is gift-ready. Choose the packaging tier that fits your occasion and brand.</p>
     </div>
-    <div class="cb-tags"><span class="cb-tag">Tannery</span><span class="cb-tag">Finished Leather</span><span class="cb-tag">B2B Supply</span><span class="cb-tag">High Volume</span></div>
+    <div class="pkg-grid">
+      <div class="pkg-card fade-up"><span class="pkg-num">01</span><span class="pkg-icon">🎁</span><h3>Standard Box</h3><p>Rigid cardboard box with foam insert, tissue paper, and plain ribbon. Included on all orders.</p></div>
+      <div class="pkg-card featured fade-up"><span class="pkg-num">02</span><span class="pkg-icon">✦</span><h3>Premium Branded Box</h3><p>Matte-finish lid-and-base box with your logo hot-stamped on the lid. Magnetic closure and satin ribbon. Included on orders of 50+ units.</p></div>
+      <div class="pkg-card fade-up"><span class="pkg-num">03</span><span class="pkg-icon">🛍️</span><h3>Branded Carry Bag</h3><p>Kraft or matte laminate paper bag with your logo and cord handle. Ideal for event distribution.</p></div>
+      <div class="pkg-card fade-up"><span class="pkg-num">04</span><span class="pkg-icon">📜</span><h3>Personalised Gift Card</h3><p>Printed message card with your brand header inside each box. Custom message per unit available.</p></div>
+    </div>
   </div>
 </section>
 
-<!-- COMPANY 4 -->
-<section class="company-block reverse">
-  <div class="cb-visual fade-up">
-    <div class="cbv4"></div><div class="cb-tex"></div>
-    <div class="cb-num">04</div>
-    <div class="cb-badge"><div class="bl">Specialty</div><div class="bv">Innovation</div></div>
-  </div>
-  <div class="cb-text fade-up">
-    <div class="company-num">04 / 04</div>
-    <div class="company-name">Scorpius <em>Enterprises</em></div>
-    <div class="company-sub">Innovative leather manufacturing &amp; finishing</div>
-    <div class="cb-divider"></div>
-    <p class="cb-body">Scorpius Enterprises represents the <strong>innovation arm</strong> of the Explicit Leather Group, pushing the boundaries of leather technology with cutting-edge tanning processes and premium specialty finishes.</p>
-    <p class="cb-body">Scorpius focuses on developing <strong>next-generation leather finishes and treatments</strong> that give the group a competitive edge in delivering trend-forward products to global fashion buyers.</p>
-    <div class="cb-specs">
-      <div class="cb-spec"><div class="s-val">R&amp;D</div><div class="s-lbl">Focus Area</div></div>
-      <div class="cb-spec"><div class="s-val">Specialty</div><div class="s-lbl">Finishes</div></div>
-      <div class="cb-spec"><div class="s-val">Global</div><div class="s-lbl">Innovation Reach</div></div>
+<section class="tiers-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Order Tiers</span><div class="eyebrow-line"></div></div>
+      <h2 class="section-title">Find Your <em>Right Tier</em></h2>
+      <p class="section-desc">Every order tier includes full-leather products with custom branding. Benefits scale with quantity.</p>
     </div>
-    <div class="cb-tags"><span class="cb-tag">Innovation</span><span class="cb-tag">Specialty Finishes</span><span class="cb-tag">R&amp;D</span><span class="cb-tag">Manufacturing</span></div>
+    <div class="tiers-grid">
+      <div class="tier-card fade-up">
+        <div class="tier-label">Standard</div><div class="tier-name">25–99</div><div class="tier-range">Units Per Order</div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="chk">◆</span> Logo embossing — 1 position</li>
+          <li class="tier-feature"><span class="chk">◆</span> Standard packaging included</li>
+          <li class="tier-feature"><span class="crs">◇</span> Premium branded box — add-on</li>
+          <li class="tier-feature"><span class="crs">◇</span> Personalised gift card — N/A</li>
+          <li class="tier-feature"><span class="crs">◇</span> Pre-production sample — chargeable</li>
+          <li class="tier-feature"><span class="chk">◆</span> 10–12 working days</li>
+          <li class="tier-feature"><span class="chk">◆</span> 100% advance payment</li>
+        </ul>
+      </div>
+      <div class="tier-card featured fade-up">
+        <div class="tier-label">Premium</div><div class="tier-name">100–499</div><div class="tier-range">Units Per Order</div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="chk">◆</span> Logo embossing — 2 positions</li>
+          <li class="tier-feature"><span class="chk">◆</span> Standard packaging included</li>
+          <li class="tier-feature"><span class="chk">◆</span> Premium branded box — included</li>
+          <li class="tier-feature"><span class="chk">◆</span> Personalised gift card — included</li>
+          <li class="tier-feature"><span class="chk">◆</span> 2 free pre-production samples</li>
+          <li class="tier-feature"><span class="chk">◆</span> 7–10 working days</li>
+          <li class="tier-feature"><span class="chk">◆</span> 50% advance payment</li>
+        </ul>
+      </div>
+      <div class="tier-card fade-up">
+        <div class="tier-label">Elite</div><div class="tier-name">500+</div><div class="tier-range">Units Per Order</div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="chk">◆</span> Logo embossing — 3 positions</li>
+          <li class="tier-feature"><span class="chk">◆</span> Standard packaging included</li>
+          <li class="tier-feature"><span class="chk">◆</span> Premium branded box — included</li>
+          <li class="tier-feature"><span class="chk">◆</span> Personalised gift card — included</li>
+          <li class="tier-feature"><span class="chk">◆</span> 5 free pre-production samples</li>
+          <li class="tier-feature"><span class="chk">◆</span> 5–7 working days</li>
+          <li class="tier-feature"><span class="chk">◆</span> 30% advance payment</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="stats-banner">
-  <div class="stat-item fade-up"><div class="stat-num">4</div><span class="stat-unit">Enterprises</span><div class="stat-label">Group Companies</div></div>
-  <div class="stat-item fade-up"><div class="stat-num">2.1M</div><span class="stat-unit">Sq Ft / Year</span><div class="stat-label">Combined Production</div></div>
-  <div class="stat-item fade-up"><div class="stat-num">35+</div><span class="stat-unit">Years</span><div class="stat-label">Industry Presence</div></div>
-  <div class="stat-item fade-up"><div class="stat-num">Global</div><span class="stat-unit">Markets</span><div class="stat-label">Export Destinations</div></div>
+<section class="occasions-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Perfect For</span><div class="eyebrow-line"></div></div>
+      <h2 class="section-title">Every Corporate <em>Occasion</em></h2>
+    </div>
+    <div class="occ-grid">
+      <div class="occ-card fade-up"><span class="occ-icon">🎄</span><div class="occ-title">Festive Gifting</div><div class="occ-sub">Diwali, Christmas, Eid</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">🏆</span><div class="occ-title">Employee Rewards</div><div class="occ-sub">Awards & recognition</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">🤝</span><div class="occ-title">Client Gifting</div><div class="occ-sub">Onboarding & retention</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">🎉</span><div class="occ-title">Conferences</div><div class="occ-sub">Delegate welcome kits</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">🎓</span><div class="occ-title">New Joinee Kits</div><div class="occ-sub">First-day gifts</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">🥂</span><div class="occ-title">Milestones</div><div class="occ-sub">Anniversaries & launches</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">✈️</span><div class="occ-title">Overseas Delegation</div><div class="occ-sub">Premium visitor gifts</div></div>
+      <div class="occ-card fade-up"><span class="occ-icon">🌸</span><div class="occ-title">Brand Activation</div><div class="occ-sub">Launch event gifts</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="enquiry-section" id="enquiry">
+  <div class="fade-up" style="position:relative;z-index:2">
+    <h2 class="enq-h">Let's Create<br><em>Together.</em></h2>
+    <p class="enq-sub">Share your requirements and we'll respond with product recommendations, leather swatches, and transparent pricing within 24 hours.</p>
+    <div class="enq-contact">
+      <div class="ec-item"><div class="ec-icon">📍</div><div class="ec-text"><strong>Factory & Office</strong><span>Plot No. 8, 14/3, Mathura Road<br>Opp. Havells Ltd., Faridabad, INDIA</span></div></div>
+      <div class="ec-item"><div class="ec-icon">☎</div><div class="ec-text"><strong>Call Us</strong><a href="tel:+919999831332">+91 9999 831 332 &nbsp;|&nbsp; 0129 4255 000</a></div></div>
+      <div class="ec-item"><div class="ec-icon">✉</div><div class="ec-text"><strong>Email</strong><a href="mailto:explicit@explicitleathers.in">explicit@explicitleathers.in</a></div></div>
+      <div class="ec-item"><div class="ec-icon">◆</div><div class="ec-text"><strong>Instagram</strong><a href="https://www.instagram.com/explicitleathergroup/" target="_blank">@explicitleathergroup</a></div></div>
+    </div>
+  </div>
+  <div class="enq-form fade-up">
+    <div class="fg-row">
+      <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+      <div class="fg"><label>Company</label><input type="text" placeholder="Organisation"></div>
+    </div>
+    <div class="fg-row">
+      <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+    </div>
+    <div class="fg"><label>Product Category</label><select><option>Wallets & Card Holders</option><option>Bags & Portfolio Folders</option><option>Diaries & Journals</option><option>Desk Accessories</option><option>Gift Sets / Combos</option><option>Travel Accessories</option><option>Multiple Categories</option></select></div>
+    <div class="fg-row">
+      <div class="fg"><label>Quantity</label><select><option>25–50 units</option><option>51–100 units</option><option>101–250 units</option><option>251–500 units</option><option>500+ units</option></select></div>
+      <div class="fg"><label>Occasion</label><select><option>Festive Gifting</option><option>Employee Rewards</option><option>Client Gifting</option><option>Conference / Event</option><option>New Joinee Kit</option><option>Brand Activation</option><option>Overseas Delegation</option><option>Other</option></select></div>
+    </div>
+    <div class="fg"><label>Additional Requirements</label><textarea placeholder="Custom colour, packaging preference, delivery city, deadline, logo details…"></textarea></div>
+    <button class="enq-submit" onclick="alert('Thank you! We will contact you within 24 hours.');return false;">Submit Enquiry →</button>
+  </div>
 </section>
 
 <footer>
   <div class="footer-grid">
-    <div><div class="footer-brand-name">Explicit Leather Group</div><div class="footer-brand-sub">Est. 1990 · Faridabad, India</div><p class="footer-desc">India's premier leather manufacturing group — pioneers of garment-washed and specialty-dyed leather for global markets.</p><div class="footer-social"><a class="social-btn" href="#">in</a><a class="social-btn" href="#">IG</a><a class="social-btn" href="#">fb</a></div></div>
-    <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Leather Products</a></li><li><a href="finished-leather.html">Finished Leather</a></li><li><a href="corporate-gifting.html">Corporate Gifting</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
-    <div><div class="footer-col-title">Group Companies</div><ul class="footer-links"><li><a href="companies.html">Explicit Leathers</a></li><li><a href="companies.html">Exquisite Enterprises</a></li><li><a href="companies.html">Gee &amp; Gee Industries</a></li><li><a href="companies.html">Scorpius Enterprises</a></li></ul></div>
+    <div>
+      <div class="footer-brand-name">Explicit Leather Group</div>
+      <div class="footer-brand-sub">Est. 1990 · Faridabad, India</div>
+      <p class="footer-desc">India's premier leather manufacturing group — pioneers of garment-washed and specialty-dyed leather for global markets. Recognised Export House, Govt. of India.</p>
+      <div class="footer-social">
+        <a class="social-btn" href="#">in</a>
+        <a class="social-btn" href="https://www.instagram.com/explicitleathergroup/" target="_blank">IG</a>
+        <a class="social-btn" href="#">fb</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Leather Products</a></li>
+        <li><a href="finished-leather.html">Finished Leather</a></li>
+        <li><a href="corporate-gifting.html">Corporate Gifting</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Group Companies</div>
+      <ul class="footer-links">
+        <li><a href="companies.html">Explicit Leathers</a></li>
+        <li><a href="companies.html">Exquisite Enterprises</a></li>
+        <li><a href="companies.html">Gee & Gee Industries</a></li>
+        <li><a href="companies.html">Scorpius Enterprises</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><span>© 2025 Explicit Leather Group. All rights reserved.</span><span>Faridabad, Haryana, India</span></div>
+  <div class="footer-bottom">
+    <span>© 2025 Explicit Leather Group. All rights reserved.</span>
+    <span>Faridabad, Haryana, India</span>
+  </div>
 </footer>
+
 <a class="scroll-top" href="#" id="scrollTop">↑</a>
 <script src="common.js"></script>
-</body></html>
+<script>
+function switchG(id,btn){
+  document.querySelectorAll('.g-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.g-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('g-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
